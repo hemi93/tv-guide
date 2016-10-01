@@ -4,4 +4,6 @@ Rails.application.routes.draw do
       resources :schedules, except: [:edit, :new]
     end
   end
+
+  match '*unmatched_route', to: 'errors#not_found', via: :all
 end

@@ -33,7 +33,7 @@ module Api
       def destroy
         schedule = Schedule.find(params[:id])
         if schedule.destroy
-          render json: { message: I18n.t('api.schedules.delete.success') }, status: 204
+          render json: {}, status: 204
         else
           render json: { errors: schedule.errors }, status: :bad_request
         end

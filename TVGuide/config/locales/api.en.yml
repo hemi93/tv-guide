@@ -1,7 +1,5 @@
 en:
   api:
     errors:
-      not_found: 'Requested resource was not found on server' 
-    schedules:
-      delete:
-        success: 'Schedule has been deleted'
+      not_found: 'Not found'
+      resource_not_found: 'Requested resource was not found on server'
