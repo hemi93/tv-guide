@@ -6,4 +6,5 @@ describe Show do
   it { should have_db_index(:channel_id) }
   it { should have_many(:schedules) }
   it { should validate_presence_of(:name) }
+  it { should validate_uniqueness_of(:name).scoped_to(:channel_id) }
 end
