@@ -41,7 +41,7 @@ module Api
       private
 
       def set_schedule
-        @schedule = Schedule.find(params[:id])
+        @schedule = Schedule.includes(:show).find(params[:id])
       end
 
       def schedule_params
