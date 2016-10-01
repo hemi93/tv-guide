@@ -22,6 +22,9 @@ group :development, :test do
 
   # Ruby linter
   gem 'rubocop'
+
+  # Rspec linter
+  gem 'rubocop-rspec'
 end
 
 group :development do
