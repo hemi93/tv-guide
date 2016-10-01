@@ -6,4 +6,5 @@ describe Channel do
   it { should have_db_index(:category_id) }
   it { should have_many(:schedules).through(:shows) }
   it { should have_many(:shows) }
+  it { should validate_presence_of(:name) }
 end
