@@ -2,7 +2,7 @@ module Api
   module V1
     # Controller for Schecules REST endpoints
     class SchedulesController < APIController
-      before_action :set_schedule, only: [:show, :update, :destroy]
+      before_action :set_schedule, only: [:show, :update]
 
       def index
         @schedules = Schedule.all.includes(show: { channel: :category })
@@ -16,9 +16,9 @@ module Api
       def create
         @schedule = Schedule.new(schedule_params)
         if @schedule.save
-          render json: @schedule, serializer: ::V1::ScheduleSerializer
+          render json: @schedule, serializer: ::V1::ScheduleSerializer, status: :created
         else
-          render json: { errors: @schedule.errors }, status: 400
+          render json: { errors: @schedule.errors }, status: :bad_request
         end
       end
 
@@ -26,15 +26,16 @@ module Api
         if @schedule.update(schedule_params)
           render json: @schedule, serializer: ::V1::ScheduleSerializer, status: 200
         else
-          render json: { errors: @schedule.errors }, status: 400
+          render json: { errors: @schedule.errors }, status: :bad_request
         end
       end
 
       def destroy
-        if @schedule.destroy
+        schedule = Schedule.find(params[:id])
+        if schedule.destroy
           render json: { message: I18n.t('api.schedules.delete.success') }, status: 204
         else
-          render json: { errors: @schedule.errors }, status: 400
+          render json: { errors: schedule.errors }, status: :bad_request
         end
       end
 

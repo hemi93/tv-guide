@@ -1,4 +1,7 @@
 describe Api::V1::SchedulesController do
+  let(:schedule) { create(:schedule) }
+  let(:invalid_schedule_id) { 0 }
+
   describe 'GET /api/v1/schedules' do
     it 'returns HTTP 200 code' do
       get api_v1_schedules_path
@@ -19,10 +22,10 @@ describe Api::V1::SchedulesController do
     let(:schedule_params) { { schedule: { date: random_airing_date, show_id: show.id } } }
     let(:invalid_schedule_params) { { schedule: { date: nil, show_id: nil } } }
 
-    it 'on success returns HTTP 200 code' do
+    it 'on success returns HTTP 201 code' do
       post api_v1_schedules_path, params: schedule_params
 
-      expect(response).to have_http_status(200)
+      expect(response).to have_http_status(201)
     end
 
     it 'on success returns JSON matching schedule schema' do
@@ -45,9 +48,7 @@ describe Api::V1::SchedulesController do
   end
 
   describe 'PUT /api/v1/schedules/:id' do
-    let(:schedule) { create(:schedule) }
     let(:random_airing_date) { Faker::Date.between(Date.today, 5.weeks.from_now) }
-    let(:invalid_schedule_id) { 0 }
 
     it 'on success returns HTTP 200 code' do
       put api_v1_schedule_path(schedule), params: { schedule: { date: random_airing_date } }
@@ -69,9 +70,6 @@ describe Api::V1::SchedulesController do
   end
 
   describe 'GET api/v1/schedules/:id' do
-    let(:schedule) { create(:schedule) }
-    let(:invalid_schedule_id) { 0 }
-
     it 'on success returns HTTP 200 code' do
       get api_v1_schedule_path(schedule)
 
@@ -86,6 +84,20 @@ describe Api::V1::SchedulesController do
 
     it 'returns 404 status code if schedule was not found' do
       get api_v1_schedule_path(id: invalid_schedule_id)
+
+      expect(response).to have_http_status(404)
+    end
+  end
+
+  describe 'DELETE api/v1/schedules/:id' do
+    it 'on success returns HTTP 204 code' do
+      delete api_v1_schedule_path(schedule)
+
+      expect(response).to have_http_status(204)
+    end
+
+    it 'returns 404 status code if schedule was not found' do
+      delete api_v1_schedule_path(id: invalid_schedule_id)
 
       expect(response).to have_http_status(404)
     end
