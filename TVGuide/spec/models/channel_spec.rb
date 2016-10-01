@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe Channel do
   it { should belong_to(:category) }
   it { should have_db_column(:name).of_type(:string) }

@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe Show do
   it { should have_many(:schedules) }
   it { should belong_to(:channel) }
