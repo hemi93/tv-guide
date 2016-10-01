@@ -1,27 +1,33 @@
 {
   "type": "object",
-  "required": ["id", "type", "attributes"],
+  "required": ["data"],
   "properties": {
-    "attributes": {
+    "data": {
       "type": "object",
-      "required": ["date", "show"],
+      "required": ["id", "type", "attributes"],
       "properties": {
-        "date": {
-          "type": "string"
-        },
-        "show": {
+        "attributes": {
           "type": "object",
-          "required": ["id", "name", "category"],
+          "required": ["date", "show"],
           "properties": {
-            "category": {
+            "date": {
+              "type": "string"
+            },
+            "show": {
               "type": "object",
-              "required": ["id", "name"],
+              "required": ["id", "name", "channel"],
               "properties": {
-                "id": {
-                  "type": "integer"
-                },
-                "name": {
-                  "type": "string"
+                "channel": {
+                  "type": "object",
+                  "required": ["id", "name", "category"],
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
