@@ -18,6 +18,7 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 require 'simplecov'
+require 'json_matchers/rspec'
 
 SimpleCov.start 'rails'
 

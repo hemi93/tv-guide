@@ -25,6 +25,9 @@ group :development, :test do
 
   # Rspec linter
   gem 'rubocop-rspec'
+
+  # N+1 query detection
+  gem 'bullet'
 end
 
 group :development do
@@ -42,6 +45,7 @@ group :test do
 
   # Matcher helpers
   gem 'shoulda-matchers', require: false
+  gem 'json_matchers'
 
   # Database cleaning between test
   gem 'database_cleaner'
