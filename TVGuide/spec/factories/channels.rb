@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :channel do
-    name { "#{Faker::Commerce.product_name} #{Faker::Company.buzzword}" }
     category
+    name { "#{Faker::Commerce.product_name} #{Faker::Company.buzzword}" }
 
     trait :with_shows do
       transient do
