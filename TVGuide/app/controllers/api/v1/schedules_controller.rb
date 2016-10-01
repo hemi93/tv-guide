@@ -13,10 +13,29 @@ module Api
         render json: @schedule, serializer: ::V1::ScheduleSerializer
       end
 
+      def create
+        @schedule = Schedule.new(schedule_params)
+        if @schedule.save
+          render json: @schedule, serializer: ::V1::ScheduleSerializer
+        else
+          render json: { errors: @schedule.errors }, status: 400
+        end
+      end
+
       def update
+        if @schedule.update(schedule_params)
+          render json: @schedule, serializer: ::V1::ScheduleSerializer, status: 200
+        else
+          render json: { errors: @schedule.errors }, status: 400
+        end
       end
 
       def destroy
+        if @schedule.destroy
+          render json: { message: I18n.t('api.schedules.delete.success') }, status: 204
+        else
+          render json: { errors: @schedule.errors }, status: 400
+        end
       end
 
       private

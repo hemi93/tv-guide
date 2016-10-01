@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :api, constraints: { format: :json } do
     namespace :v1 do
-      resources :schedules
+      resources :schedules, except: [:edit, :new]
     end
   end
 end
