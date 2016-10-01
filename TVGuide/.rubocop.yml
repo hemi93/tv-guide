@@ -7,8 +7,6 @@ inherit_from:
   - enabled.yml
   - disabled.yml
 
-Documentation:
-    Enabled: false
 
 # Common configuration.
 AllCops:

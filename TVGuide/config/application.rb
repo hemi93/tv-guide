@@ -7,6 +7,7 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 module TVGuide
+  # General configuration of Rails Application
   class Application < Rails::Application
     config.generators do |g|
       g.factory_girl true
