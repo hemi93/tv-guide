@@ -24,7 +24,7 @@ module Api
 
       def update
         if @schedule.update(schedule_params)
-          render json: @schedule, serializer: ::V1::ScheduleSerializer, status: 200
+          render json: @schedule, serializer: ::V1::ScheduleSerializer, status: :ok
         else
           render json: { errors: @schedule.errors }, status: :bad_request
         end
@@ -33,7 +33,7 @@ module Api
       def destroy
         schedule = Schedule.find(params[:id])
         if schedule.destroy
-          render json: {}, status: 204
+          render json: {}, status: :no_content
         else
           render json: { errors: schedule.errors }, status: :bad_request
         end
