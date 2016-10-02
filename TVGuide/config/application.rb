@@ -9,6 +9,8 @@ Bundler.require(*Rails.groups)
 module TVGuide
   # General configuration of Rails Application
   class Application < Rails::Application
+    config.autoload_paths += %W(#{config.root}serializers)
+
     config.generators do |g|
       g.factory_girl true
     end

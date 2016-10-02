@@ -1,0 +1,5 @@
+en:
+  api:
+    errors:
+      not_found: 'Not found'
+      resource_not_found: 'Requested resource was not found on server'

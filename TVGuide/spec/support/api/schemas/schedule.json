@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "required": ["data"],
+  "properties": {
+    "data": {
+      "type": "object",
+      "required": ["id", "type", "attributes"],
+      "properties": {
+        "attributes": {
+          "type": "object",
+          "required": ["date", "show"],
+          "properties": {
+            "date": {
+              "type": "string"
+            },
+            "show": {
+              "type": "object",
+              "required": ["id", "name", "channel"],
+              "properties": {
+                "channel": {
+                  "type": "object",
+                  "required": ["id", "name", "category"],
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

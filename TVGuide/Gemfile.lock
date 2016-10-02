@@ -47,6 +47,9 @@ GEM
     arel (7.1.2)
     ast (2.3.0)
     builder (3.2.2)
+    bullet (5.4.2)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.10.0)
     byebug (9.0.6)
     capybara (2.9.2)
       addressable
@@ -72,6 +75,10 @@ GEM
       activesupport (>= 4.1.0)
     i18n (0.7.0)
     json (1.8.3)
+    json-schema (2.2.5)
+    json_matchers (0.5.0)
+      activesupport (>= 3.0.0)
+      json-schema (~> 2.2.5)
     jsonapi (0.1.1.beta2)
       json (~> 1.8)
     listen (3.0.8)
@@ -177,6 +184,7 @@ GEM
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     unicode-display_width (1.1.1)
+    uniform_notifier (1.10.0)
     websocket-driver (0.6.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -188,11 +196,13 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers (~> 0.10.0)
+  bullet
   byebug
   capybara
   database_cleaner
   factory_girl_rails
   faker
+  json_matchers
   listen (~> 3.0.5)
   pg
   puma (~> 3.0)
