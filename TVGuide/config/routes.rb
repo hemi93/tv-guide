@@ -5,5 +5,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :schedules, only: [:index]
+
   match '*unmatched_route', to: 'errors#not_found', via: :all
 end
