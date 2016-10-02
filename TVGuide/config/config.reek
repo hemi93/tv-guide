@@ -1,0 +1,14 @@
+UncommunicativeModuleName:
+  enabled: false
+
+"db":
+  FeatureEnvy:
+    enabled: false
+  IrresponsibleModule:
+    enabled: false
+  UncommunicativeVariableName:
+    enabled: false
+
+"app/controllers":
+  InstanceVariableAssumption:
+    enabled: false

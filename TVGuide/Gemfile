@@ -48,6 +48,9 @@ group :development, :test do
 
   # N+1 query detection
   gem 'bullet'
+
+  # Detect rails code smells
+  gem 'reek'
 end
 
 group :development do

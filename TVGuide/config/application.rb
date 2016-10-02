@@ -11,8 +11,8 @@ module TVGuide
   class Application < Rails::Application
     config.autoload_paths += %W(#{config.root}serializers)
 
-    config.generators do |g|
-      g.factory_girl true
+    config.generators do |generator|
+      generator.factory_girl true
     end
   end
 end
