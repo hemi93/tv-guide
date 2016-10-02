@@ -58,10 +58,10 @@ Used for dev environment setup
 ###### Run FactoryGirl lint
 Used before running RSpec test suite as separate task
 
-`$ rails rails factory_girl:lint`
+`$ rails factory_girl:lint`
 
 
 ###### Run Rubocop lint
 Used before running RSpec test suite as separate task
 
-`$ rails rails rubocop:lint`
+`$ rails rubocop:lint`
