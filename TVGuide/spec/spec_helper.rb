@@ -20,7 +20,11 @@
 require 'simplecov'
 require 'json_matchers/rspec'
 
-SimpleCov.start 'rails'
+SimpleCov.start 'rails' do
+  add_filter 'app/channels'
+  add_filter 'app/jobs'
+  add_filter 'app/mailers'
+end
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

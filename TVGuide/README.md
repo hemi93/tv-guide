@@ -65,3 +65,9 @@ Used before running RSpec test suite as separate task
 Used before running RSpec test suite as separate task
 
 `$ rails rubocop:lint`
+
+### What's not included at this moment
+
+* Token API authorization
+
+* Tests for default jobs/channels/mailers (not used at all). Excluded from coverage results.
