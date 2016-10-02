@@ -8,11 +8,11 @@
           = render partial: 'search_form'
     %tr
       %th
-        = 'Show'
+        = t('activerecord.attributes.schedule.show')
       %th
-        = 'Channel'
+        = t('activerecord.attributes.schedule.channel')
       %th
-        = 'Airing date'
+        = t('activerecord.attributes.schedule.date')
   %tbody
     - @schedules.each do |schedule|
       %tr

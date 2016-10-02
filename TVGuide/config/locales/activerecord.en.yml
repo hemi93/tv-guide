@@ -1,0 +1,7 @@
+en:
+  activerecord:
+    attributes:
+      schedule:
+        show: "Show"
+        channel: "Channel"
+        date: "Airing date"
