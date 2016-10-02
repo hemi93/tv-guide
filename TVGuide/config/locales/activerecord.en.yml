@@ -5,3 +5,9 @@ en:
         show: "Show"
         channel: "Channel"
         date: "Airing date"
+    models:
+      schedule:
+        one: Schedule
+        few: Schedules
+        many: Schedules
+        other: Schedules

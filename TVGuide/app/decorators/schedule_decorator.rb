@@ -11,6 +11,6 @@ class ScheduleDecorator < Drape::Decorator
   end
 
   def iso8601_formatted_date
-    date.strftime('%Y-%m-%d %H:%M:%S %z')
+    date.strftime('%Y-%m-%d %H:%M:%S')
   end
 end
