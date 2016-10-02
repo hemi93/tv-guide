@@ -47,6 +47,8 @@ App features:
 Please note, that following must be executed from within proper docker machine, eg.
 `$ docker-compose run --rm dev bash -l`.
 
+Those tasks are executed automatically with starting docker machines (dev/test).
+
 ###### Populate database with random data
 Used for dev environment setup
 
