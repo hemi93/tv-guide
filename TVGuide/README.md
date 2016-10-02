@@ -37,7 +37,7 @@ App features:
   * Rubocop - RSpec code style warning and errors
   * Bullet - N+1 or unused eager loading
   * FactoryGirl - factory errors (including traits)
-
+  * Reek - Code smell warnings (with customized config file for rails)
 
 * Custom rake tasks for rubocop and populating database
 

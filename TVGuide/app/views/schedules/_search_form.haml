@@ -1,0 +1,3 @@
+= search_form_for @query, html: { class: 'form-inline' } do |f|
+  = f.search_field :show_name_cont, placeholder: t('pages.schedules.search_placeholder'), class: 'form-control'
+  = f.submit class: 'btn btn-primary'

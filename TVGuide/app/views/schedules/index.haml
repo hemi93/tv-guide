@@ -1,0 +1,28 @@
+%h1
+  = t('activerecord.models.schedule.many')
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th{ colspan: 3 }
+        .pull-right
+          = render partial: 'search_form'
+    %tr
+      %th
+        = t('activerecord.attributes.schedule.show')
+      %th
+        = t('activerecord.attributes.schedule.channel')
+      %th
+        = t('activerecord.attributes.schedule.date')
+  %tbody
+    - @schedules.each do |schedule|
+      %tr
+        %td
+          = schedule.decorate.show_name
+        %td
+          = schedule.decorate.channel_name
+        %td
+          = schedule.decorate.iso8601_formatted_date
+
+.pull-right
+  = will_paginate @schedules, renderer: BootstrapPagination::Rails
