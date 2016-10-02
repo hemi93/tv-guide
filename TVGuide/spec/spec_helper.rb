@@ -26,6 +26,8 @@ SimpleCov.start 'rails' do
   add_filter 'app/mailers'
 end
 
+SimpleCov.minimum_coverage 98
+
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
