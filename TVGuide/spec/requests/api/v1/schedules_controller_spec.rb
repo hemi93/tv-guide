@@ -55,12 +55,6 @@ describe Api::V1::SchedulesController do
       expect(response).to have_http_status(200)
     end
 
-    it 'on success returns JSON matching schedule schema' do
-      put api_v1_schedule_path(schedule), params: { schedule: { date: random_date } }
-
-      expect(response).to match_response_schema('schedule')
-    end
-
     it 'on error returns JSON matching error schedule schema' do
       put api_v1_schedule_path(schedule), params: invalid_schedule_params
 

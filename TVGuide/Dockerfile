@@ -8,7 +8,8 @@ RUN apt-get update && apt-get install -y \
   nodejs \
   curl \
   libpq-dev \
-  libgmp-dev
+  libgmp-dev \
+  git
 
 RUN apt-get update -qq && apt-get install -y build-essential
 
