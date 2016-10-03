@@ -37,8 +37,10 @@ Example Rails 5 (JSON API + views) app in dockerized environment.
   * FactoryGirl - factory errors (including traits)
   * Reek - Code smell warnings (with customized config file for rails)
 
+
 * Custom rake tasks for preparing dev and test environments, code quality checking, etc.
 
+* Code coverage checking - results will appear at `/coverage/index.html` after running tests
 
 ### What's not included at this moment
 
